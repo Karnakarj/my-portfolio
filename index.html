@@ -1,97 +1,360 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>JUMC - Portfolio</title>
+  <meta name="description" content="Portfolio of JUMC - Full Stack Developer specializing in Java and modern web technologies.">
+  <meta name="keywords" content="JUMC, Full Stack Developer, Java Developer, Portfolio">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Fonts (Multiple Families for variety) -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Animate.css for Animations -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <!-- AOS Library for Scroll Animations -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Particle Background -->
+  <div id="particles-js" class="hintergrund"></div>
+  
+  <!-- Custom Cursor -->
+  <div class="cursor"></div>
+  
+  <!-- Portfolio Wrapper -->
+  <div class="portfolio-wrapper">
+    <!-- Navigation -->
     <header>
-        <h1>Jonnalagadda Uma Maheshwara Chary</h1>
-       
+      <nav>
+        <div class="container">
+          <div class="logo"><a href="#home">JUMC</a></div>
+          <div class="menu-icon" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+          <ul id="navLinks">
+            <li><a href="#home" class="active" onclick="navigateToSection('home')">Home</a></li>
+            <li><a href="#about" onclick="navigateToSection('about')">About</a></li>
+            <li><a href="#education" onclick="navigateToSection('education')">Education</a></li>
+            <li><a href="#projects" onclick="navigateToSection('projects')">Projects</a></li>
+            <li><a href="#skills" onclick="navigateToSection('skills')">Skills</a></li>
+            <li><a href="#achievements" onclick="navigateToSection('achievements')">Achievements</a></li>
+            <li><a href="#activities" onclick="navigateToSection('activities')">Activities</a></li>
+            <li><a href="#contact" onclick="navigateToSection('contact')">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
     </header>
-
-    <nav>
-        <ul>
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#education">Education</a></li>
-
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#achievements">Achievements</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-
-    <section id="about">
+    
+    <!-- Main Content -->
+    <main>
+      <!-- Home Section -->
+      <section id="home" class="section home-section" data-aos="fade-in">
+        <div class="overlay"></div>
+        <div class="home-content animate__animated animate__fadeIn">
+          <h1>Welcome to My Portfolio</h1>
+          <p>
+            Hello and thank you for stopping by! I'm Jonnalagadda Uma Maheshwara Chary - please, call me Karnakar. I'm a <strong>Full Stack Java Developer</strong>, turning code into clever solutions with a pinch of humor. Enjoy exploring my portfolio!
+          </p>
+          <div class="images-section" data-aos="zoom-in" data-aos-delay="200">
+            <img src="assets/images/home-img1.jpg" alt="Home Image 1" class="section-image">
+            <img src="assets/images/home-img2.jpg" alt="Home Image 2" class="section-image">
+          </div>
+          <div class="home-buttons">
+            <a href="#projects" class="btn" onclick="navigateToSection('projects')">View Projects</a>
+            <a href="assets/resume.pdf" class="btn" target="_blank">Download Resume</a>
+          </div>
+        </div>
+        <footer class="section-footer" data-aos="fade-up" data-aos-delay="400">
+          <p>"A portfolio without code samples is like a cocktail without alcohol—it looks nice but lacks the essential kick."</p>
+        </footer>
+      </section>
+      
+      <!-- About Section -->
+      <section id="about" class="section about-section" data-aos="fade-up">
         <h2>About Me</h2>
-        <p>I am Uma Maheshwara Chary Jonnalagadda a computer science graduate with strong foundation in Core Java. Possessing a keen interest in web development, data science, mobile app development, I am eager to contribute my skills and knowledge to a dynamic team. Proven ability to problem-solve, learn quickly, collaborate effectively. Seeking a challenging role in software development where I can leverage my academic learning and grow professionally..</p>
-    </section>
-    <section id="education">
+        <div class="about-content">
+          <div class="about-text" data-aos="fade-right">
+            <p>
+              Hello, I'm Uma Maheshwara Chary—known as Karnakar. My journey from an Electronics & Communication Engineering diploma to a B.Tech in Computer Science has been a path of continuous learning and creative problem-solving. As a Full Stack Java Developer, I turn challenges into efficient digital solutions using Java, HTML, CSS, SQL, and modern web technologies. I've honed my skills through diverse projects and a full-stack internship at Manac Infotech, and I've attached a video introduction to give you a closer look at my journey. Please take a moment to explore the various sections of my portfolio, and feel free to connect with me on social media. Thank you for stopping by—I look forward to engaging with you!
+            </p>
+          </div>
+          <div class="about-media" data-aos="fade-left" data-aos-delay="200">
+            <div id="mediaContainer">
+              <!-- Initially, profile photo is shown -->
+              <img id="profilePhoto" src="assets/images/your-about-image.jpg" alt="Profile Photo">
+              <!-- Video is hidden; replace 'your-video.mp4' when ready -->
+              <video id="introVideo" src="assets/videos/your-video.mp4" controls style="display:none; width:300px; height:300px; object-fit:cover;"></video>
+            </div>
+            <button id="toggleMedia" class="btn">Watch Video</button>
+          </div>
+        </div>
+        <footer class="section-footer" data-aos="fade-up" data-aos-delay="400">
+          <p>"If debugging is the process of removing bugs, then programming must be the process of putting them in." – Edsger Dijkstra</p>
+        </footer>
+      </section>
+      
+      <!-- Education Section -->
+      <section id="education" class="section education-section" data-aos="fade-up">
         <h2>Education</h2>
-        <div class="education-item">
-            <h3>BTech in Computer Science and Engineering</h3>
-            <p>Vaagdevi College of Engineering</p>
-            <p>Completed: 2024</p>
+        <div class="timeline">
+          <div class="timeline-item-container" data-aos="fade-right">
+            <div class="timeline-item-text">
+              <h3>B.Tech in Computer Science & Engineering</h3>
+              <p>Vaagdevi College of Engineering</p>
+              <span>Percentage: 71% | GPA: 7.33</span>
+              <p>2021 - 2024</p>
+              <p class="comment"><strong>B.Tech Journey:</strong> Advanced coursework, projects, and hackathons in Java, databases, and web technologies.</p>
+            </div>
+            <div class="timeline-item-image">
+              <img src="assets/images/education-certificate1.jpg" alt="B.Tech Certificate">
+            </div>
+          </div>
+          <div class="timeline-item-container" data-aos="fade-right" data-aos-delay="200">
+            <div class="timeline-item-text">
+              <h3>Diploma in Electronics & Communication Engineering</h3>
+              <p>Vaagdevi College of Engineering</p>
+              <span>GPA: 7.0</span>
+              <p>Graduated: August 2021</p>
+              <p class="comment"><strong>Tech Odyssey:</strong> Gained foundational skills in electronics and programming through hands-on circuit projects.</p>
+            </div>
+            <div class="timeline-item-image">
+              <img src="assets/images/education-certificate2.jpg" alt="Diploma Certificate">
+            </div>
+          </div>
+          <div class="timeline-item-container" data-aos="fade-right" data-aos-delay="400">
+            <div class="timeline-item-text">
+              <h3>SSC</h3>
+              <p>Good News School</p>
+              <span>GPA: 8.2</span>
+              <p>Completed: March 2018</p>
+              <p class="comment">Balanced academics with extracurriculars, building discipline and teamwork.</p>
+            </div>
+            <div class="timeline-item-image">
+              <img src="assets/images/ssc-certificate.jpg" alt="SSC Certificate">
+            </div>
+          </div>
         </div>
-        <div class="education-item">
-            <h3>Diploma in Electronics and Communication Engineering</h3>
-            <p>Vaagdevi College of Engineering</p>
-            <p>Completed: 2021</p>
-        </div>
-        <div class="education-item">
-            <h3>SSC</h3>
-            <p>Good News High School</p>
-            <p>Completed: 2018</p>
-        </div>
-    </section>
-    
-
-    <section id="skills">
-        <h2>Skills</h2>
-        <ul>
-            <li>JAVA</li>
-            <li>SQL</li>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-            <!-- Add more skills as needed -->
-        </ul>
-    </section>
-
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="project">
-            <h3>Enhancing Fraud Detection in Financial Sectors</h3>
-            <p>     Developed a BTech project focused on incorporating data mining techniques to enhance fraud detection within the financial sector. Utilized sophisticated tools to analyse transactions, identifying patterns and detecting fraudulent activity. Specialized in upcoding fraud detection, a prevalent issue in the healthcare insurance sector in India. Project aimed to minimize financial losses by leveraging artificial intelligence and statistical analysis. This project showcased expertise in data mining, fraud detection, and the Indian healthcare insurance industry</p>
-        </div>
-        <div class="project">
+        <footer class="section-footer" data-aos="fade-up" data-aos-delay="700">
+          <p>"In order to understand recursion, you must first understand recursion."</p>
+        </footer>
+      </section>
+      
+      <!-- Projects & Certifications Section -->
+      <section id="projects" class="section projects-section" data-aos="fade-up">
+        <h2>Projects & Certifications</h2>
+        <div class="projects-grid">
+          <div class="project-card" data-aos="zoom-in">
+            <img src="assets/images/fraud-detection.jpg" alt="Fraud Detection Project">
+            <h3>Fraud Detection Enhancement</h3>
+            <p>Developed a data mining solution to detect fraudulent activities in the financial sector—focusing on healthcare insurance fraud in India. I led the front-end design and presentation.</p>
+            <a href="assets/certificates/fraud-detection.pdf" target="_blank" class="btn project-btn">View Certificate</a>
+          </div>
+          <div class="project-card" data-aos="zoom-in" data-aos-delay="200">
+            <img src="assets/images/water-level.jpg" alt="Water Level Indicator">
             <h3>Water Level Indicator</h3>
-            <p>  Designed and developed a water level indicator using a 555timer integrated circuit to create a reliable system for monitoring and alerting users to water level changes. This project showcased my leadership and technical abilities by applying theoretical knowledge to address a practical problem in water monitoring and control.</p>
+            <p>Designed and developed a cost-efficient water level indicator using a 555 timer circuit that monitors water levels and alerts users, reducing costs by nearly 50%.</p>
+            <a href="assets/certificates/water-level.pdf" target="_blank" class="btn project-btn">View Certificate</a>
+          </div>
+          <div class="project-card coming-soon" data-aos="zoom-in" data-aos-delay="400">
+            <h3>New Project Coming Soon</h3>
+            <p>Stay tuned for an innovative project involving cloud computing and AI integration.</p>
+          </div>
         </div>
-        <!-- Add more projects as needed -->
-    </section>
-
-    <section id="achievements">
-        <h2>Achievements</h2>
-        <ul>
-            <li>7th place in mandal-level competitive exam</li>
-            <li>1st place in cursive writing competition</li>
-            <li>Medals and certificates in volleyball and kabaddi</li>
-        </ul>
-    </section>
-
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Email: uma.maheshwarachary@gmail.com</p>
-        <a href= "https://wa.me/8184924201" >Mobile: (+91) 81849 24201 </a>
-        <p></p>
-        <a href= "https://www.linkedin.com/in/jumc">LinkedIn</a>
-    </section>
-
+        <div class="certifications-container">
+          <div class="certifications-grid">
+            <div class="certification-card" data-aos="flip-left">
+              <img src="assets/images/java-cert.jpg" alt="Java Certification">
+              <p>
+                <strong>Java Programming Certification</strong><br>
+                Certified by Talent Battle Learning Academy and Manac Info Tech Pvt.<br>
+                <a href="assets/certificates/java-cert.pdf" target="_blank" class="btn cert-btn">View Certificate</a>
+              </p>
+            </div>
+            <div class="certification-card" data-aos="flip-left" data-aos-delay="200">
+              <img src="assets/images/aws-cert.jpg" alt="AWS Certification">
+              <p>
+                <strong>AWS Academy Cloud Foundation Certification</strong><br>
+                Acquired foundational cloud knowledge and best practices.<br>
+                <a href="assets/certificates/aws-cert.pdf" target="_blank" class="btn cert-btn">View Certificate</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <footer class="section-footer" data-aos="fade-up" data-aos-delay="700">
+          <p>"Real programmers count from zero."</p>
+        </footer>
+      </section>
+      
+      <!-- Skills Section -->
+      <section id="skills" class="section skills-section" data-aos="fade-up">
+        <h2>Technical Expertise & Soft Skills</h2>
+        <div class="skills-container">
+          <div class="skill-frame" data-aos="flip-left">
+            <h3>Core Java Mastery</h3>
+            <p>
+              I possess a comprehensive understanding of Core Java, mastering Object-Oriented Programming, Collections, Exception & File Handling, and Generics to build robust and scalable applications. And trust me, my code is so neat it practically cleans up after itself!
+            </p>
+          </div>
+          <div class="skill-frame" data-aos="flip-left" data-aos-delay="100">
+            <h3>Web Development Skills</h3>
+            <p>
+              I design responsive, semantically-rich web interfaces using HTML and CSS, ensuring an optimal user experience that balances functionality with style. My websites are so user-friendly, even your grandma might think they're cool!
+            </p>
+          </div>
+          <div class="skill-frame" data-aos="flip-left" data-aos-delay="200">
+            <h3>Database Management</h3>
+            <p>
+              I excel in MySQL database design and query optimization, delivering efficient data handling and high-performance solutions. My databases run so smoothly, even the data likes to take a joyride on the index express!
+            </p>
+          </div>
+          <div class="skill-frame" data-aos="flip-left" data-aos-delay="300">
+            <h3>Tool Proficiency</h3>
+            <p>
+              Leveraging industry-standard tools like Git, Eclipse, and VS Code, I streamline development workflows and maintain impeccable code quality. I'm so comfortable with these tools, they practically send me thank-you notes!
+            </p>
+          </div>
+          <div class="skill-frame" data-aos="flip-left" data-aos-delay="400">
+            <h3>Problem-Solving & Analytical Thinking</h3>
+            <p>
+              I break down complex challenges into manageable tasks and craft scalable solutions. My problem-solving skills are so sharp, puzzles ask me for cheat codes!
+            </p>
+          </div>
+          <div class="skill-frame" data-aos="flip-left" data-aos-delay="500">
+            <h3>Team Collaboration & Communication</h3>
+            <p>
+              I thrive in collaborative environments, ensuring every project benefits from shared insights and collective expertise. I work so well in teams, even our coffee machine joins the conversation!
+            </p>
+          </div>
+          <div class="skill-frame" data-aos="flip-left" data-aos-delay="600">
+            <h3>Adaptability & Time Management</h3>
+            <p>
+              I quickly learn and apply new technologies while managing multiple tasks to meet deadlines. My time management is so precise, even my calendar wonders if I have superpowers!
+            </p>
+          </div>
+          <div class="skill-frame" data-aos="flip-left" data-aos-delay="700">
+            <h3>Holistic Development & Extracurricular Engagement</h3>
+            <p>
+              My active participation in sports like volleyball and kabaddi has honed my leadership and teamwork skills, balancing my technical expertise with real-world experiences.
+            </p>
+          </div>
+        </div>
+        <footer class="section-footer" data-aos="fade-up" data-aos-delay="800">
+          <p>"Writing code without a plan is like building a house without blueprints—you end up with a lot of loose screws."</p>
+        </footer>
+      </section>
+      
+      <!-- Achievements Section -->
+      <section id="achievements" class="section achievements-section" data-aos="fade-up">
+        <h2>Achievements & Awards</h2>
+        <div class="achievements-grid">
+          <div class="achievement-card" data-aos="fade-up">
+            <img src="assets/images/coding-marathon.jpg" alt="Coding Marathon">
+            <p>
+              <strong>7th Place, Mandal-Level Competitive Exam</strong><br>
+              Demonstrated strong analytical and problem-solving skills.
+            </p>
+          </div>
+          <div class="achievement-card" data-aos="fade-up" data-aos-delay="200">
+            <img src="assets/images/cursive-writing.jpg" alt="Cursive Writing">
+            <p>
+              <strong>1st Place, Cursive Writing Competition</strong><br>
+              Awarded for exceptional penmanship and meticulous attention to detail.
+            </p>
+          </div>
+          <div class="achievement-card" data-aos="fade-up" data-aos-delay="400">
+            <img src="assets/images/hackathon.jpg" alt="Hackathon">
+            <p>
+              <strong>Hackathon Participation</strong><br>
+              Showcased rapid problem-solving skills at the AGRI Hackathon.
+            </p>
+          </div>
+        </div>
+        <footer class="section-footer" data-aos="fade-up" data-aos-delay="700">
+          <p>"Debugging is like being the detective in a crime movie where you are also the murderer." – Filipe Fortes</p>
+        </footer>
+      </section>
+      
+      <!-- Activities Section -->
+      <section id="activities" class="section activities-section" data-aos="fade-up">
+        <h2>Extracurricular Activities</h2>
+        <div class="activities-grid">
+          <div class="activity-item" data-aos="fade-up">
+            <i class="fas fa-volleyball-ball fa-3x"></i>
+            <h4>Volleyball</h4>
+            <p>Earned medals at school by demonstrating teamwork and strategic play.</p>
+            <img src="assets/images/volleyball.jpg" alt="Volleyball" class="activity-image">
+          </div>
+          <div class="activity-item" data-aos="fade-up" data-aos-delay="100">
+            <i class="fas fa-futbol fa-3x"></i>
+            <h4>Kabaddi</h4>
+            <p>Received accolades for leadership and perseverance.</p>
+            <img src="assets/images/kabaddi.jpg" alt="Kabaddi" class="activity-image">
+          </div>
+          <div class="activity-item" data-aos="fade-up" data-aos-delay="200">
+            <i class="fas fa-running fa-3x"></i>
+            <h4>Active in Sports</h4>
+            <p>Regular exercise, running, and mobile gaming keep me energized.</p>
+            <img src="assets/images/running.jpg" alt="Running" class="activity-image">
+          </div>
+        </div>
+        <footer class="section-footer" data-aos="fade-up" data-aos-delay="400">
+          <p>"Real programmers count from zero."</p>
+        </footer>
+      </section>
+      
+      <!-- Contact Section -->
+      <section id="contact" class="section contact-section" data-aos="fade-up">
+        <h2>Contact Me</h2>
+        <div class="contact-grid">
+          <div class="contact-form" data-aos="fade-up">
+            <form id="contact-form">
+              <input type="text" name="name" placeholder="Your Name" required>
+              <input type="email" name="email" placeholder="Your Email" required>
+              <input type="text" name="subject" placeholder="Subject">
+              <textarea name="message" rows="5" placeholder="Drop a message, suggestion, guidance, or information" required></textarea>
+              <button type="submit" class="btn">Send Message</button>
+            </form>
+          </div>
+          <div class="contact-info" data-aos="fade-up" data-aos-delay="200">
+            <h3>Contact Details</h3>
+            <p><i class="fas fa-phone"></i> <a href="tel:+918184924201">+91 81849 24201</a></p>
+            <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/8184924201" target="_blank">Chat on WhatsApp</a></p>
+            <p><i class="fas fa-envelope"></i> <a href="mailto:uma.maheshwara.chary.j@gmail.com">uma.maheshwara.chary.j@gmail.com</a></p>
+            <div class="social-links">
+              <a href="https://www.linkedin.com/in/jumc" target="_blank" class="social-link linkedin"><i class="fab fa-linkedin"></i></a>
+              <a href="https://www.instagram.com/karnakar_j?igsh=NWVlYXEwcHB4ZWt3&utm_source=qr" target="_blank" class="social-link instagram"><i class="fab fa-instagram"></i></a>
+              <a href="https://leetcode.com/u/Uma_Maheshwara_Chary/" target="_blank" class="social-link leetcode"><i class="fas fa-code"></i></a>
+              <a href="https://karnakarj.github.io/my-portfolio/" target="_blank" class="social-link portfolio"><i class="fas fa-globe"></i></a>
+              <a href="https://www.facebook.com/karna.kar.1238" target="_blank" class="social-link facebook"><i class="fab fa-facebook"></i></a>
+              <a href="https://x.com/Karnakar_j03" target="_blank" class="social-link twitter"><i class="fab fa-twitter"></i></a>
+              <a href="https://youtube.com/@vividvibesonly?si=JBh4fuy6BfTnNxE5" target="_blank" class="social-link youtube"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+          <div class="map" data-aos="fade-up" data-aos-delay="400">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3807.149934192579!2d78.38745141433395!3d17.38504418835482!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcdd91a33b1c245%3A0x8d40d33f7db7b241!2sHyderabad%2C%20Telangana%2C%20India!5e0!3m2!1sen!2sus!4v1618384346543!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+        </div>
+        <div class="contact-overlay" onmouseover="animateContactOverlay()" onmouseout="resetContactOverlay()">
+          <p id="contactHoverMsg">Thank you for stopping by! I invite you to leave a message, share your suggestions, or simply drop a note—your feedback is the spark that helps drive our innovation</p>
+        </div>
+        <footer class="section-footer" data-aos="fade-up" data-aos-delay="600">
+          <p>"A software developer is a machine that turns coffee into code."</p>
+        </footer>
+      </section>
+    </main>
     
+    <!-- Overall Site Footer (hidden as per design) -->
+    <footer></footer>
+  </div>
+  
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+  <script src="script.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+  </script>
 </body>
 </html>
